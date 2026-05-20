@@ -1,0 +1,90 @@
+id: tool-registry-taxonomy.v1
+name: Tool Registry Taxonomy
+status: draft
+owner: Agent-Vocabulary
+
+purpose: >
+  Controlled taxonomy terms for tool registry metadata.
+  This vocabulary defines classes such as tool type, consumer type,
+  and provider type. It does not define individual tools or providers.
+
+taxonomies:
+  tool_type:
+    description: Controlled classes describing the primary form of a registered tool.
+    terms:
+      - id: api
+        label: API
+      - id: cli
+        label: CLI
+      - id: sdk
+        label: SDK
+      - id: web_application
+        label: Web Application
+      - id: mcp_server
+        label: MCP Server
+      - id: ci_wrapper
+        label: CI Wrapper
+      - id: workflow_action
+        label: Workflow Action
+      - id: local_binary
+        label: Local Binary
+      - id: hosted_service
+        label: Hosted Service
+
+  supported_consumer:
+    description: Controlled classes of consumers that can use a tool.
+    terms:
+      - id: human
+        label: Human
+      - id: agent
+        label: Agent
+      - id: workflow
+        label: Workflow
+      - id: agent_team
+        label: Agent Team
+      - id: platform_service
+        label: Platform Service
+      - id: ci
+        label: CI
+
+  provider_type:
+    description: Controlled classes describing how a provider offer exposes or distributes a tool.
+    terms:
+      - id: api
+        label: API
+      - id: mcp_server
+        label: MCP Server
+      - id: cli
+        label: CLI
+      - id: sdk
+        label: SDK
+      - id: web_application
+        label: Web Application
+      - id: github_release
+        label: GitHub Release
+      - id: npm_package
+        label: npm Package
+      - id: python_package
+        label: Python Package
+      - id: docker_image
+        label: Docker Image
+      - id: ci_wrapper
+        label: CI Wrapper
+      - id: workflow_action
+        label: Workflow Action
+      - id: hosted_service
+        label: Hosted Service
+      - id: local_binary
+        label: Local Binary
+      - id: marketplace_listing
+        label: Marketplace Listing
+
+rules:
+  - Provider type is taxonomy.
+  - Provider identity is not taxonomy.
+  - Provider identity stays in Tool-Registry as provider offer metadata.
+  - For now, provider canonical identity should use the provider website URL when available.
+  - Tool type is taxonomy.
+  - Tool identity belongs in Tool-Registry, not in Agent-Vocabulary.
+  - Consumer class is taxonomy.
+  - Tool-Registry should reference these taxonomy terms instead of inventing ad-hoc strings.
