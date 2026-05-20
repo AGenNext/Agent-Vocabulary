@@ -1,0 +1,111 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "agx": "https://agennext.dev/vocab#",
+    "name": "schema:name",
+    "description": "schema:description",
+    "termCode": "schema:termCode",
+    "sameAs": "schema:sameAs",
+    "additionalType": "schema:additionalType",
+    "hasDefinedTerm": "schema:hasDefinedTerm",
+    "potentialAction": "schema:potentialAction",
+    "object": "schema:object",
+    "result": "schema:result"
+  },
+  "@type": "schema:DefinedTermSet",
+  "@id": "agx:AgentVocabulary",
+  "name": "AGenNext Agent Vocabulary",
+  "description": "Machine-loadable list of words an AGenNext agent can understand, interpret, and execute.",
+  "hasDefinedTerm": [
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Prompt",
+      "name": "Prompt",
+      "termCode": "agx:Prompt",
+      "sameAs": "https://schema.org/CreativeWork",
+      "additionalType": "schema:CreativeWork",
+      "description": "A CreativeWork containing instructions for an agent or LLM runtime."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:PromptTemplate",
+      "name": "PromptTemplate",
+      "termCode": "agx:PromptTemplate",
+      "sameAs": "https://schema.org/CreativeWork",
+      "additionalType": "schema:CreativeWork",
+      "description": "A reusable Prompt with replaceable values."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Action",
+      "name": "Action",
+      "termCode": "agx:Action",
+      "sameAs": "https://schema.org/Action",
+      "additionalType": "schema:Action",
+      "description": "Work that an agent can interpret or execute."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:RepeatAction",
+      "name": "RepeatAction",
+      "termCode": "agx:RepeatAction",
+      "sameAs": "https://schema.org/Action",
+      "additionalType": "schema:Action",
+      "description": "An Action command that repeats a set of Actions."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Variable",
+      "name": "Variable",
+      "termCode": "agx:Variable",
+      "sameAs": "https://schema.org/PropertyValue",
+      "additionalType": "schema:PropertyValue",
+      "description": "A replaceable value used inside a PromptTemplate or Action."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Context",
+      "name": "Context",
+      "termCode": "agx:Context",
+      "sameAs": "https://schema.org/Thing",
+      "additionalType": "schema:Thing",
+      "description": "Information supplied to an agent before or during Action execution."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Memory",
+      "name": "Memory",
+      "termCode": "agx:Memory",
+      "sameAs": "https://schema.org/CreativeWork",
+      "additionalType": "schema:CreativeWork",
+      "description": "Persisted information available to the agent as Context."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Environment",
+      "name": "Environment",
+      "termCode": "agx:Environment",
+      "sameAs": "https://schema.org/Thing",
+      "additionalType": "schema:Thing",
+      "description": "Runtime configuration or external settings available to the agent."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Knowledge",
+      "name": "Knowledge",
+      "termCode": "agx:Knowledge",
+      "sameAs": "https://schema.org/CreativeWork",
+      "additionalType": "schema:CreativeWork",
+      "description": "Structured or unstructured information used by the agent to interpret a Prompt or Action."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:Result",
+      "name": "Result",
+      "termCode": "agx:Result",
+      "sameAs": "https://schema.org/Thing",
+      "additionalType": "schema:Thing",
+      "description": "Output produced after an Action is executed."
+    }
+  ]
+}
