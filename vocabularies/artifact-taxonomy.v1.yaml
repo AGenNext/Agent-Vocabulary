@@ -1,0 +1,180 @@
+id: artifact-taxonomy.v1
+name: Artifact Taxonomy
+status: draft
+owner: Agent-Vocabulary
+
+purpose: >
+  Controlled taxonomy terms for AGenNext artifact metadata. This vocabulary defines
+  classes of artifacts and related metadata terms. It does not define individual
+  artifact records, tools, providers, blueprints, skills, or graph objects.
+
+taxonomies:
+  artifact_type:
+    description: Controlled classes of AGenNext artifacts.
+    terms:
+      - id: blueprint
+        label: Blueprint
+      - id: skill
+        label: Skill
+      - id: tool
+        label: Tool
+      - id: capability
+        label: Capability
+      - id: workflow
+        label: Workflow
+      - id: protocol
+        label: Protocol
+      - id: role
+        label: Role
+      - id: runtime_profile
+        label: Runtime Profile
+      - id: policy
+        label: Policy
+      - id: prompt
+        label: Prompt
+      - id: evaluation
+        label: Evaluation
+      - id: dataset
+        label: Dataset
+      - id: seed_data
+        label: Seed Data
+      - id: grammar_rule
+        label: Grammar Rule
+      - id: graph_object
+        label: Graph Object
+      - id: review_record
+        label: Review Record
+      - id: provider_package
+        label: Provider Package
+
+  representation_type:
+    description: Controlled classes describing how an artifact is represented.
+    terms:
+      - id: source_import
+        label: Source Import
+      - id: native_record
+        label: Native Database Record
+      - id: generated_output
+        label: Generated Output
+      - id: published_export
+        label: Published Export
+      - id: runtime_instance
+        label: Runtime Instance
+
+  lifecycle_status:
+    description: Controlled lifecycle states for artifacts.
+    terms:
+      - id: proposed
+        label: Proposed
+      - id: draft
+        label: Draft
+      - id: reviewed
+        label: Reviewed
+      - id: approved
+        label: Approved
+      - id: active
+        label: Active
+      - id: deprecated
+        label: Deprecated
+      - id: rejected
+        label: Rejected
+      - id: archived
+        label: Archived
+
+  consumer_type:
+    description: Controlled classes of consumers that can use an artifact.
+    terms:
+      - id: human
+        label: Human
+      - id: agent
+        label: Agent
+      - id: agent_team
+        label: Agent Team
+      - id: workflow
+        label: Workflow
+      - id: platform_service
+        label: Platform Service
+      - id: ci
+        label: CI
+      - id: runtime
+        label: Runtime
+
+  tool_type:
+    description: Controlled classes describing the primary form of a registered tool.
+    terms:
+      - id: api
+        label: API
+      - id: cli
+        label: CLI
+      - id: sdk
+        label: SDK
+      - id: web_application
+        label: Web Application
+      - id: mcp_server
+        label: MCP Server
+      - id: ci_wrapper
+        label: CI Wrapper
+      - id: workflow_action
+        label: Workflow Action
+      - id: local_binary
+        label: Local Binary
+      - id: hosted_service
+        label: Hosted Service
+
+  provider_type:
+    description: Controlled classes describing how a provider offer exposes or distributes a tool or artifact.
+    terms:
+      - id: api
+        label: API
+      - id: mcp_server
+        label: MCP Server
+      - id: cli
+        label: CLI
+      - id: sdk
+        label: SDK
+      - id: web_application
+        label: Web Application
+      - id: github_release
+        label: GitHub Release
+      - id: npm_package
+        label: npm Package
+      - id: python_package
+        label: Python Package
+      - id: docker_image
+        label: Docker Image
+      - id: ci_wrapper
+        label: CI Wrapper
+      - id: workflow_action
+        label: Workflow Action
+      - id: hosted_service
+        label: Hosted Service
+      - id: local_binary
+        label: Local Binary
+      - id: marketplace_listing
+        label: Marketplace Listing
+
+  blueprint_entity_type:
+    description: Controlled classes of blueprint target entities.
+    terms:
+      - id: agent
+        label: Agent
+      - id: agent_team
+        label: Agent Team
+      - id: workflow
+        label: Workflow
+      - id: protocol
+        label: Protocol
+      - id: capability
+        label: Capability
+      - id: runtime_profile
+        label: Runtime Profile
+      - id: role
+        label: Role
+
+rules:
+  - Taxonomies define acceptable classes, not individual records.
+  - Artifact identities belong in their owning registries or artifact repositories.
+  - Provider identity is not taxonomy; provider_type is taxonomy.
+  - Tool identity belongs in Tool-Registry; tool_type is taxonomy.
+  - Blueprint identity belongs in Agent-Blueprint; blueprint_entity_type is taxonomy.
+  - Agent-Grammar should validate artifact records against these terms.
