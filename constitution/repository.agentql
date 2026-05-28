@@ -1,0 +1,53 @@
+repository AgentVocabulary {
+
+  identity {
+    type canonical_semantic_primitive_repository
+    authoritative true
+    evolvable true
+  }
+
+  responsibility {
+
+    owns [
+      primitive_definitions,
+      semantic_terms,
+      primitive_classifications,
+      primitive_attributes,
+      primitive_evolution_semantics
+    ]
+  }
+
+  prohibits [
+    execution_semantics,
+    runtime_logic,
+    orchestration,
+    middleware_definitions,
+    governance_enforcement,
+    workflow_execution,
+    infrastructure_bindings,
+    ontology_relationship_resolution
+  ]
+
+  boundaries {
+
+    grammar AgentGrammar
+    governance AgentRules
+    ontology AgentOntology
+    execution AgentQL
+    constitution AgentConstitution
+  }
+
+  structure {
+
+    root vocab/
+
+    domains [
+      cognition,
+      governance,
+      civilization,
+      execution,
+      trust,
+      temporal
+    ]
+  }
+}
