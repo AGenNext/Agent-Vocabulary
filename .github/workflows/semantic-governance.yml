@@ -1,0 +1,49 @@
+name: Semantic Governance Enforcement
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  semantic-governance:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Repository Constitution Exists
+        run: |
+          test -f constitution/repository.agentql
+
+      - name: Validate Vocabulary Boundary
+        run: |
+          if grep -R "runtime_logic\|workflow_execution\|middleware" vocab/; then
+            echo "Repository boundary violation detected"
+            exit 1
+          fi
+
+      - name: Validate AgentQL Artifacts
+        run: |
+          find . -name "*.agentql" | while read file; do
+            test -s "$file"
+          done
+
+      - name: Validate Deterministic Structure
+        run: |
+          if grep -R "TODO\|FIXME\|TEMP" .; then
+            echo "Non-deterministic placeholders detected"
+            exit 1
+          fi
+
+      - name: Validate Constitution Ownership
+        run: |
+          grep -R "responsibility" constitution/
+
+      - name: Semantic Governance Passed
+        run: |
+          echo "Semantic governance validation passed"
