@@ -49,6 +49,33 @@ repository AgentVocabulary {
     }
   }
 
+  golden_path {
+
+    governance mandatory
+
+    mandatory_artifacts [
+      agent.agentql,
+      constitution/repository.agentql,
+      .github/workflows/semantic-governance.yml
+    ]
+
+    mandatory_controls [
+      semantic_validation,
+      maturity_validation,
+      governance_validation,
+      traceability_validation,
+      auditability_validation
+    ]
+
+    github_enforcement {
+      protected_branches mandatory
+      signed_commits mandatory
+      pull_request_reviews mandatory
+      required_checks mandatory
+      codeowners mandatory
+    }
+  }
+
   responsibility {
 
     owns [
