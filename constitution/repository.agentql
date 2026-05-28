@@ -6,6 +6,49 @@ repository AgentVocabulary {
     evolvable true
   }
 
+  maturity {
+
+    stage sandbox
+
+    criteria {
+
+      semantic_stability required
+      governance_maturity required
+      enforcement_maturity required
+      federation_readiness required
+      sovereignty_readiness required
+      operational_robustness required
+      security_trust required
+      evolution_safety required
+      ecosystem_adoption required
+      explainability required
+    }
+
+    promotion {
+
+      sandbox_to_incubating {
+        requires [
+          semantic_validation,
+          governance_enforcement,
+          auditability,
+          traceability,
+          repository_boundary_enforcement
+        ]
+      }
+
+      incubating_to_graduated {
+        requires [
+          interoperability,
+          backward_compatibility,
+          federation_compatibility,
+          operational_robustness,
+          ecosystem_adoption,
+          security_validation
+        ]
+      }
+    }
+  }
+
   responsibility {
 
     owns [
