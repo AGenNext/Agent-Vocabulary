@@ -106,6 +106,24 @@
       "sameAs": "https://schema.org/Thing",
       "additionalType": "schema:Thing",
       "description": "Output produced after an Action is executed."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:MostReliableEntity",
+      "name": "MostReliableEntity",
+      "termCode": "agx:MostReliableEntity",
+      "sameAs": "https://schema.org/Thing",
+      "additionalType": "schema:Thing",
+      "description": "The most reliable entity in the system: the component trusted to continuously observe, compare, reconcile, recover, and prove state alignment. It is reliable because its behavior is declared, constrained, idempotent, observable, auditable, and continuously reconciled."
+    },
+    {
+      "@type": "schema:DefinedTerm",
+      "@id": "agx:KubernetesNativeReconciliationAgent",
+      "name": "KubernetesNativeReconciliationAgent",
+      "termCode": "agx:KubernetesNativeReconciliationAgent",
+      "sameAs": "https://schema.org/SoftwareApplication",
+      "additionalType": "schema:SoftwareApplication",
+      "description": "The agent who never sleeps: a Kubernetes-core, Kubernetes-native reconciliation agent implemented as a controller or operator. It continuously observes actual cluster and application state through the Kubernetes API, compares it with declared desired state, detects drift, checks policy, performs idempotent correction or raises approval, records evidence, and keeps reconciling until convergence."
     }
   ]
 }
